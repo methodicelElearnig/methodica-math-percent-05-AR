@@ -49,7 +49,7 @@ body[data-subject-theme="math"] {
 html, body {
   height: 100%;
   background: #e9e9ee;
-  font-family: Calibri, Carlito, Tahoma, 'Arial Hebrew', Arial, sans-serif;
+  font-family: Arial, Tahoma, sans-serif;
   color: var(--text);
   overflow: hidden;
 }
@@ -109,7 +109,7 @@ html, body {
   background: var(--primary-action-gradient, linear-gradient(to bottom, #6f6ad5 9%, #4b35a5 38%, #270075 100%));
   color: #fff;
   border: none; border-radius: 1000px;
-  font-family: Calibri, Carlito, Tahoma, sans-serif;
+  font-family: Arial, Tahoma, sans-serif;
   font-size: 20px; font-weight: 400;
   cursor: pointer; direction: rtl;
   text-align: center; white-space: nowrap;
@@ -130,7 +130,7 @@ html, body {
   width: auto; min-width: 140px; padding: 0 40px;
   border: 1px solid var(--subject-700); border-radius: 1000px; background: #fff;
   color: var(--subject-700);
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 20px; font-weight: 400;
+  font-family: Arial, Tahoma, sans-serif; font-size: 20px; font-weight: 400;
   cursor: pointer; direction: rtl; white-space: nowrap;
 }
 .btn-back:hover { font-weight: 600; border-width: 1.5px; }
@@ -1076,7 +1076,7 @@ html, body {
 .flag-btn-glyph-pole   { inset: 0 93.38% 0 0; }
 .flag-btn-glyph-banner { inset: 3.49% 0 41.72% 0; }
 .flag-btn-label {
-  font-family: Calibri, Carlito, Tahoma, sans-serif;
+  font-family: Arial, Tahoma, sans-serif;
   font-weight: 600; font-size: 18px; color: var(--subject-500);   /* 18px type floor */
   text-align: center; width: 92px; line-height: 1.15;
   direction: rtl; display: none;
@@ -1633,18 +1633,18 @@ html, body {
 .report-field { display: flex; flex-direction: column; gap: 6px; }
 .report-label { font-size: 16px; font-weight: 600; color: #303030; }
 .required-star { color: #D32F2F; }
-.report-select { height: 44px; border: 2px solid #C9CED8; border-radius: 10px; padding: 0 14px; font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 17px; color: #303030; background: #fff; direction: rtl; outline: none; cursor: pointer; transition: border-color 0.12s; }
+.report-select { height: 44px; border: 2px solid #C9CED8; border-radius: 10px; padding: 0 14px; font-family: Arial, Tahoma, sans-serif; font-size: 17px; color: #303030; background: #fff; direction: rtl; outline: none; cursor: pointer; transition: border-color 0.12s; }
 .report-select:focus { border-color: var(--subject-500); }
-.report-textarea { border: 2px solid #C9CED8; border-radius: 10px; padding: 12px 14px; font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 16px; color: #303030; direction: rtl; resize: none; outline: none; transition: border-color 0.12s; line-height: 1.5; }
+.report-textarea { border: 2px solid #C9CED8; border-radius: 10px; padding: 12px 14px; font-family: Arial, Tahoma, sans-serif; font-size: 16px; color: #303030; direction: rtl; resize: none; outline: none; transition: border-color 0.12s; line-height: 1.5; }
 .report-textarea:focus { border-color: var(--subject-500); }
 .report-char-count { font-size: 13px; color: #8A9AAA; text-align: left; direction: ltr; }
 .report-actions { display: flex; flex-direction: row; gap: 12px; direction: rtl; margin-top: 4px; }
 .report-error { color: #d33; font-size: 14px; margin: 4px 0 8px; direction: rtl; }
 .report-thanks { text-align: center; padding: 8px 0; direction: rtl; }
-.report-submit-btn { height: 44px; padding: 0 32px; background: linear-gradient(180deg, var(--subject-500), var(--subject-700)); color: #fff; border: none; border-radius: 50px; font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; outline: none; transition: opacity 0.12s; }
+.report-submit-btn { height: 44px; padding: 0 32px; background: linear-gradient(180deg, var(--subject-500), var(--subject-700)); color: #fff; border: none; border-radius: 50px; font-family: Arial, Tahoma, sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; outline: none; transition: opacity 0.12s; }
 .report-submit-btn:hover { opacity: 0.88; }
 .report-submit-btn:focus-visible { outline: 3px solid var(--subject-500); outline-offset: 3px; }
-.report-cancel-btn { height: 44px; padding: 0 28px; background: #fff; color: #5A6A7A; border: 2px solid #C9CED8; border-radius: 50px; font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 18px; font-weight: 400; cursor: pointer; outline: none; transition: border-color 0.12s, color 0.12s; }
+.report-cancel-btn { height: 44px; padding: 0 28px; background: #fff; color: #5A6A7A; border: 2px solid #C9CED8; border-radius: 50px; font-family: Arial, Tahoma, sans-serif; font-size: 18px; font-weight: 400; cursor: pointer; outline: none; transition: border-color 0.12s, color 0.12s; }
 .report-cancel-btn:hover { border-color: #8A9AAA; color: #303030; }
 .report-cancel-btn:focus-visible { outline: 3px solid var(--subject-500); outline-offset: 3px; }
 /* guided/teach צדקתי? occupies the primary bar slot (btn-continue styling)
@@ -2146,7 +2146,7 @@ p, li, h1, h2, h3, .scq-opt-text, .teach-q-text, .explain-body, .teach-intro {
   right: 0; left: 6.81%;   /* keep the text clear of the left-side tail */
   top: 50%; transform: translateY(-50%);
   padding: 12px;
-  font-family: Calibri, Carlito, Tahoma, sans-serif;
+  font-family: Arial, Tahoma, sans-serif;
   font-size: 18px; font-weight: 400; color: #000;
   text-align: center; direction: rtl; line-height: normal;
 }
@@ -2211,7 +2211,7 @@ p, li, h1, h2, h3, .scq-opt-text, .teach-q-text, .explain-body, .teach-intro {
   display: flex; align-items: center; gap: 8px;
   padding: 6px 20px; border: none; border-radius: 1000px;
   background: transparent; color: #fff; cursor: pointer;
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 20px; font-weight: 400;
+  font-family: Arial, Tahoma, sans-serif; font-size: 20px; font-weight: 400;
 }
 .mode-seg.is-active { background: #fff; color: var(--subject-500); cursor: default; }
 .mode-seg-label { white-space: nowrap; }
@@ -2391,7 +2391,7 @@ p, li, h1, h2, h3, .scq-opt-text, .teach-q-text, .explain-body, .teach-intro {
 .s19-per1 {gap: 16px; }
 .s19-per3 {gap: 20px; }
 .s19-step-label, .s19-elaboration, .s19-question-line {width: 100%; margin: 0;
-  font-family: Calibri, Carlito, Tahoma, sans-serif;
+  font-family: Arial, Tahoma, sans-serif;
   font-size: 20px; line-height: 1.3;
   color: #fff;
   text-align: right; direction: rtl; }
@@ -2409,7 +2409,7 @@ p, li, h1, h2, h3, .scq-opt-text, .teach-q-text, .explain-body, .teach-intro {
   background: #fff;
   border: none; border-radius: 1000px;
   cursor: pointer; }
-.s19-opt-text {font-family: Calibri, Carlito, Tahoma, sans-serif;
+.s19-opt-text {font-family: Arial, Tahoma, sans-serif;
   font-size: 18px; font-weight: 400;
   color: var(--subject-500);
   text-align: right; direction: rtl; }
@@ -2629,7 +2629,7 @@ mark { background: var(--subject-300); color: inherit; padding: 0 4px; border-ra
 .qprog-dot svg { width: 12px; height: 12px; display: none; }
 .qprog-station.is-correct .qprog-dot svg.qp-tick { display: block; }
 .qprog-station.is-wrong   .qprog-dot svg.qp-x    { display: block; }
-.qprog-label { font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 18px; color: #b9bac0; white-space: nowrap; }
+.qprog-label { font-family: Arial, Tahoma, sans-serif; font-size: 18px; color: #b9bac0; white-space: nowrap; }
 .qprog-station.is-current .qprog-label { color: #303030; font-weight: 700; }
 .qprog-station.is-correct .qprog-label,
 .qprog-station.is-wrong   .qprog-label { color: #303030; }
@@ -2662,19 +2662,19 @@ mark { background: var(--subject-300); color: inherit; padding: 0 4px; border-ra
   color: #fff;}
 .scq-hint-title {width: 100%; text-align: right; position: relative;
   padding-right: 56px;
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-weight: 700; font-size: 32px;
+  font-family: Arial, Tahoma, sans-serif; font-weight: 700; font-size: 32px;
   color: #fff; line-height: normal; margin: 0;}
 .scq-hint-title-icon {position: absolute; right: 0; top: 50%; transform: translateY(-50%);
   width: 32px; height: 27.4px; display: block;}
 .scq-hint-body {width: 100%; text-align: right;
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-weight: 400; font-size: 24px;
+  font-family: Arial, Tahoma, sans-serif; font-weight: 400; font-size: 24px;
   color: #fff; line-height: normal;}
 .scq-hint-body p {margin: 0 0 12px;}
 .scq-hint-body p:last-child {margin-bottom: 0;}
 .scq-hint-close {width: 196px; padding: 16px 40px;
   border: none; border-radius: 1000px; background: #fff;
   color: #303030;
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 24px; font-weight: 400;
+  font-family: Arial, Tahoma, sans-serif; font-size: 24px; font-weight: 400;
   cursor: pointer; white-space: nowrap;}
 .scq-hint-close:hover {font-weight: 600;}
 .scq-hint-title-icon {width: 30px; height: 26px; flex-shrink: 0; color: #fff;}
@@ -2692,7 +2692,7 @@ mark { background: var(--subject-300); color: inherit; padding: 0 4px; border-ra
   padding: 0 20px;
   background: #fff; border: 1px solid var(--subject-700); border-radius: 1000px;
   color: var(--subject-500);
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 20px; font-weight: 400;
+  font-family: Arial, Tahoma, sans-serif; font-size: 20px; font-weight: 400;
   display: flex; align-items: center; justify-content: center; gap: 6px;
   cursor: pointer; direction: rtl;
 }
@@ -2845,7 +2845,7 @@ mark { background: var(--subject-300); color: inherit; padding: 0 4px; border-ra
 }
 .story-content--top { justify-content: flex-start; padding-top: 56px; }
 .story-title {
-  margin: 0; font-family: Calibri, Carlito, Tahoma, sans-serif;
+  margin: 0; font-family: Arial, Tahoma, sans-serif;
   font-size: 40px; font-weight: 700; color: var(--text); line-height: 1.2;
 }
 /* the deck sets the crowd's answer as the screen's own title — big and bold on
@@ -2902,12 +2902,12 @@ mark { background: var(--subject-300); color: inherit; padding: 0 4px; border-ra
 .scene-card--wide { width: 1030px; }
 .scene-title {
   margin: 0;
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 24px; font-weight: 700;
+  font-family: Arial, Tahoma, sans-serif; font-size: 24px; font-weight: 700;
   color: var(--subject-500); line-height: 1.3;
 }
 .scene-text {
   margin: 0;
-  font-family: Calibri, Carlito, Tahoma, sans-serif; font-size: 22px; font-weight: 400;
+  font-family: Arial, Tahoma, sans-serif; font-size: 22px; font-weight: 400;
   color: #222; line-height: 1.4;
 }
 

@@ -260,7 +260,7 @@ const CHOCO_TABLE =
 const CHOCO_PHOTO =
       '<div class="photo-flank"><div class="photo-flank-says">' +
       '<div class="rs-bubble rs-bubble--above photo-say-bubble"><svg class="rs-bubble-shape" viewBox="0 0 216 89" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-down"/></svg><span class="rs-bubble-text">تعزّزت نكهة الشوكولاتة في كلا القدرين بالقدر نفسه، لأننا أضفنا الكمية نفسها بالضبط.</span></div>' +
-      '<div class="rs-bubble rs-bubble--above photo-say-bubble"><svg class="rs-bubble-shape" viewBox="0 0 216 89" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-down"/></svg><span class="rs-bubble-text">لست متأكدًا، علينا أن نتحقق!</span></div></div>' +
+      '<div class="rs-bubble rs-bubble--above photo-say-bubble"><svg class="rs-bubble-shape" viewBox="0 0 216 89" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-down"/></svg><span class="rs-bubble-text">لستُ متأكدة، علينا أن نتحقق!</span></div></div>' +
       '<img class="q-photo" src="assets/img/q-argument.jpg" alt="مشاركتان في المخيّم تتجادلان قرب قدور الشوكولاتة الساخنة"></div>';
 const IRIS_FB =
   'لتحديد أي حليب شوكولاتة أغنى بالشوكولاتة، نقارن نسبة الشوكولاتة المئوية في كل وصفة، وليس فقط عدد الأكواب.' +
@@ -660,8 +660,8 @@ const QUESTIONS = [
     type: 'multi',
     options: [
       { id: 'a', html: 'هي لا تأخذ في الحسبان عدد الشاشات التي ينتجها كل واحد من المصانع.' },
-      { id: 'b', html: 'نسبة الشاشات المعيبة في مصنع "قدم" أقل من نسبة الشاشات المعيبة في مصنع "عتيد".' },
-      { id: 'c', html: 'نسبة الشاشات المعيبة في مصنع "عتيد" أقل من نسبة الشاشات المعيبة في مصنع "قدم".' },
+      { id: 'b', html: 'نسبة الشاشات المعيبة في مصنع "قدم" أقل منها في مصنع "عتيد".' },
+      { id: 'c', html: 'نسبة الشاشات المعيبة في مصنع "عتيد" أقل منها في مصنع "قدم".' },
       { id: 'd', html: 'كمية الإنتاج في مصنع "عتيد" أكبر 4 مرات من كمية الإنتاج في مصنع "قدم".' },
     ],
     correctSet: ['a', 'c'],

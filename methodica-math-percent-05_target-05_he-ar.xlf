@@ -1523,7 +1523,7 @@
       </trans-unit>
       <trans-unit id="05-00-35-010">
         <source>אחוז המסכים הפגומים במפעל "קדם" נמוך יותר מאחוז המסכים הפגומים במפעל "עתיד".</source>
-        <target>نسبة الشاشات المعيبة في مصنع "قدم" أقل من نسبة الشاشات المعيبة في مصنع "عتيد".</target>
+        <target>نسبة الشاشات المعيبة في مصنع "قدم" أقل منها في مصنع "عتيد".</target>
         <note from="screen-id">05-00-35</note>
         <note from="element-role">body-text</note>
         <note from="source-location">unit-js/questions.js:663</note>
@@ -1531,7 +1531,7 @@
       </trans-unit>
       <trans-unit id="05-00-35-011">
         <source>אחוז המסכים הפגומים במפעל "עתיד" נמוך יותר מאחוז המסכים הפגומים במפעל "קדם".</source>
-        <target>نسبة الشاشات المعيبة في مصنع "عتيد" أقل من نسبة الشاشات المعيبة في مصنع "قدم".</target>
+        <target>نسبة الشاشات المعيبة في مصنع "عتيد" أقل منها في مصنع "قدم".</target>
         <note from="screen-id">05-00-35</note>
         <note from="element-role">body-text</note>
         <note from="source-location">unit-js/questions.js:664</note>
@@ -4785,7 +4785,7 @@
       </trans-unit>
       <trans-unit id="05-00-99-232">
         <source>&lt;span class="rs-bubble-text"&gt;לא בטוח, חייבים לבדוק!&lt;/span&gt;</source>
-        <target>&lt;span class="rs-bubble-text"&gt;لست متأكدًا، علينا أن نتحقق!&lt;/span&gt;</target>
+        <target>&lt;span class="rs-bubble-text"&gt;لستُ متأكدة، علينا أن نتحقق!&lt;/span&gt;</target>
         <note from="screen-id">05-00-99</note>
         <note from="element-role">body-text</note>
         <note from="source-location">unit-js/questions.js:263</note>
