@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>النسب المئوية — الهدف 4.5</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="styles.css?v=20261007a">
+</head>
+<body data-subject-theme="math">
+<div id="stage">
+<div id="app">
+
+  <!-- shared bubble symbols — vendored verbatim from percent-04 -->
+  <svg width="0" height="0" style="position: absolute; overflow: hidden" aria-hidden="true" focusable="false">
+      <symbol id="bubble-tail-right" viewBox="0 0 241 137" preserveAspectRatio="none">
+        <mask
+          id="bubble-tail-right-outline"
+          maskUnits="userSpaceOnUse"
+          x="0"
+          y="0"
+          width="241"
+          height="137"
+          fill="black">
+          <rect fill="white" width="241" height="137" />
+          <path
+            d="M220.421 56.5269V11.4516C220.421 6.78392 215.45 3 209.319 3H14.1024C7.9707 3 3 6.78392 3 11.4516V125.548C3 130.216 7.9707 134 14.1024 134H209.319C215.45 134 220.421 130.216 220.421 125.548V79.0645C220.421 78.7124 238 67.7427 238 67.7427C231.109 63.3513 227.305 60.9243 220.421 56.5269Z" />
+        </mask>
+        <path
+          d="M220.421 56.5269V11.4516C220.421 6.78392 215.45 3 209.319 3H14.1024C7.9707 3 3 6.78392 3 11.4516V125.548C3 130.216 7.9707 134 14.1024 134H209.319C215.45 134 220.421 130.216 220.421 125.548V79.0645C220.421 78.7124 238 67.7427 238 67.7427C231.109 63.3513 227.305 60.9243 220.421 56.5269Z"
+          fill="#fff" />
+        <path
+          d="M220.421 56.5269H217.421V58.1704L218.806 59.0551L220.421 56.5269ZM238 67.7427L239.588 70.2879C240.462 69.7425 240.995 68.787 241 67.757C241.005 66.7269 240.481 65.7664 239.612 65.2128L238 67.7427ZM220.421 11.4516H217.421V56.5269H220.421H223.421V11.4516H220.421ZM209.319 3V6C211.788 6 213.911 6.7653 215.352 7.86247C216.791 8.95784 217.421 10.2546 217.421 11.4516H220.421H223.421C223.421 7.98093 221.566 5.05188 218.986 3.08837C216.41 1.12666 212.982 0 209.319 0V3ZM220.421 79.0645H217.421V125.548H220.421H223.421V79.0645H220.421ZM220.421 125.548H217.421C217.421 126.745 216.791 128.042 215.352 129.138C213.911 130.235 211.788 131 209.319 131V134V137C212.982 137 216.41 135.873 218.986 133.912C221.566 131.948 223.421 129.019 223.421 125.548H220.421ZM209.319 134V131H14.1024V134V137H209.319V134ZM14.1024 134V131C11.6334 131 9.51023 130.235 8.06894 129.138C6.63002 128.042 6 126.745 6 125.548H3H0C0 129.019 1.85532 131.948 4.43467 133.912C7.01165 135.873 10.4397 137 14.1024 137V134ZM3 11.4516H6C6 10.2546 6.63002 8.95784 8.06894 7.86247C9.51023 6.7653 11.6334 6 14.1024 6V3V0C10.4397 0 7.01165 1.12666 4.43467 3.08837C1.85532 5.05188 0 7.98093 0 11.4516H3ZM3 125.548H6V11.4516H3H0V125.548H3ZM14.1024 3V6H209.319V3V0H14.1024V3ZM220.421 56.5269L218.806 59.0551C225.691 63.4531 229.496 65.8807 236.388 70.2727L238 67.7427L239.612 65.2128C232.722 60.822 228.919 58.3955 222.036 53.9987L220.421 56.5269ZM238 67.7427C236.412 65.1976 236.412 65.1977 236.412 65.1978C236.411 65.1979 236.411 65.198 236.411 65.1982C236.41 65.1985 236.41 65.199 236.408 65.1997C236.406 65.2011 236.403 65.2031 236.399 65.2058C236.39 65.2111 236.378 65.219 236.361 65.2295C236.327 65.2504 236.278 65.2813 236.213 65.3217C236.084 65.4024 235.895 65.5207 235.654 65.6713C235.172 65.9726 234.484 66.4032 233.659 66.921C232.009 67.9563 229.807 69.3412 227.604 70.7379C225.404 72.1329 223.192 73.5463 221.526 74.6363C220.696 75.1789 219.981 75.6545 219.466 76.0125C219.214 76.1872 218.974 76.3587 218.782 76.5072C218.694 76.575 218.559 76.6827 218.423 76.8092C218.363 76.8656 218.229 76.9935 218.088 77.1708C218.018 77.2582 217.892 77.425 217.771 77.6548C217.676 77.8354 217.421 78.3502 217.421 79.0645H220.421H223.421C223.421 79.7734 223.169 80.2814 223.078 80.4538C222.961 80.6756 222.841 80.833 222.78 80.9098C222.656 81.066 222.547 81.1676 222.52 81.1929C222.451 81.2573 222.414 81.2834 222.455 81.2514C222.521 81.2006 222.658 81.1003 222.887 80.9414C223.333 80.632 223.992 80.1929 224.81 79.6576C226.44 78.5917 228.622 77.1967 230.817 75.8052C233.009 74.4155 235.202 73.036 236.848 72.0035C237.67 71.4874 238.356 71.0583 238.835 70.7583C239.075 70.6082 239.264 70.4905 239.392 70.4104C239.456 70.3703 239.505 70.3396 239.538 70.319C239.555 70.3086 239.567 70.3008 239.576 70.2956C239.58 70.293 239.583 70.2911 239.585 70.2898C239.586 70.2891 239.587 70.2886 239.587 70.2883C239.588 70.2882 239.588 70.288 239.588 70.288C239.588 70.2879 239.588 70.2879 238 67.7427Z"
+          style="fill: var(--subject-500)"
+          mask="url(#bubble-tail-right-outline)" />
+      </symbol>
+
+      <!-- Tail at bottom-centre, pointing DOWN onto the character's head.
+         Used by S7. Single stroked path (no mask needed): white fill,
+         3px Subject/500 outline. Geometry preserved exactly from the
+         Figma export (viewBox 216x89, stroke-width 3, preserveAspectRatio
+         none so it stretches to the CSS box). -->
+      <symbol id="bubble-tail-down" viewBox="0 0 216 89" preserveAspectRatio="none">
+        <path
+          d="M11.0303 1.5H204.971C207.842 1.50006 210.369 2.06137 212.121 2.90137C213.982 3.7935 214.5 4.73475 214.5 5.28711V76.6631C214.5 77.2154 213.982 78.1567 212.121 79.0488C210.369 79.8888 207.842 80.4501 204.971 80.4502H124.545V80.5146L124.416 80.5703L108.468 87.3652L92.9766 80.5762L92.834 80.5137V80.4502H11.0303C8.15832 80.4502 5.63138 79.8889 3.87891 79.0488C2.01789 78.1567 1.5 77.2154 1.5 76.6631V5.28711C1.50001 4.73475 2.01782 3.7935 3.87891 2.90137C5.63138 2.06132 8.15832 1.5 11.0303 1.5Z"
+          fill="#fff"
+          style="stroke: var(--subject-500)"
+          stroke-width="3" />
+      </symbol>
+
+      <!-- Small tail pointing UP, for the "SmallSpeechText" label bubble
+         (Figma node 1205:20133) — used by S13's "התחילו כאן" pointer under
+         station 1. Unlike the two bubbles above this one is a FILLED shape
+         with no stroke (fill = Subject/100, the light subject tint), so the
+         theme var goes on `fill` rather than `stroke`. Rounded corners
+         (r≈4) are preserved from the export — a CSS border-triangle can't
+         reproduce them, which is why this is real SVG geometry. -->
+      <symbol id="bubble-tail-up-small" viewBox="0 0 29.6626 26.75">
+        <path
+          d="M11.3672 2C12.9068 -0.666668 16.7558 -0.666665 18.2954 2L29.1207 20.75C30.6603 23.4167 28.7358 26.75 25.6566 26.75H4.00597C0.926766 26.75 -0.997735 23.4167 0.541867 20.75L11.3672 2Z"
+          style="fill: var(--subject-100)" />
+      </symbol>
+    </svg>
+
+
+  <!-- Report/issue flag — approved chrome, pasted verbatim from 720-core/chrome -->
+  <button class="flag-btn" type="button" aria-label="هل وجدتم مشكلة؟">
+        <span class="flag-btn-icon">
+          <span class="flag-btn-glyph" aria-hidden="true">
+            <svg class="flag-btn-glyph-pole" viewBox="0 0 0.794329 17.0005" preserveAspectRatio="none" fill="none">
+              <path
+                d="M0.397164 17C0.177722 17 0 16.8239 0 16.6065V0.393501C0 0.176082 0.177722 0 0.397164 0C0.616607 0 0.794329 0.176082 0.794329 0.393501V16.607C0.794329 16.8245 0.616607 17.0005 0.397164 17.0005V17Z"
+                fill="currentColor" />
+            </svg>
+            <svg class="flag-btn-glyph-banner" viewBox="0 0 12 9.31542" preserveAspectRatio="none" fill="none">
+              <path
+                d="M2.76227 9.31542C1.91972 9.31542 1.06958 9.15545 0.213483 8.71363C0.0823588 8.64599 0 8.51124 0 8.36469V0.950975C0 0.814619 0.0715221 0.687925 0.188558 0.615989C0.305594 0.54459 0.45189 0.537611 0.574886 0.598811C0.577053 0.599884 0.578679 0.600958 0.580846 0.602032C2.31309 1.49586 4.05563 1.046 5.90003 0.569821C7.80946 0.0770055 9.78336 -0.431915 11.7865 0.601495C11.9176 0.669136 12 0.803882 12 0.950438V8.36415C12 8.4946 11.9344 8.617 11.8255 8.69001C11.7166 8.76302 11.5774 8.77805 11.4555 8.72974C11.443 8.7249 11.4311 8.71954 11.4197 8.71363C9.68745 7.8198 7.94491 8.26967 6.10051 8.7453C5.00709 9.02714 3.89199 9.31489 2.76281 9.31489L2.76227 9.31542ZM0.793787 8.11935C2.45559 8.87307 4.13094 8.44038 5.90003 7.98407C7.62469 7.53903 9.40191 7.08057 11.2062 7.75806V1.19631C9.54441 0.442591 7.86906 0.875281 6.09997 1.33159C4.37531 1.77663 2.59755 2.23509 0.793787 1.5576V8.11935Z"
+                fill="currentColor" />
+            </svg>
+          </span>
+        </span>
+        <span class="flag-btn-label">هل وجدتم مشكلة؟</span>
+      </button>
+
+  <!-- ══ S0 — slide 3: TwoOptionSelection (approved template) — the chosen
+       companion persists across the whole unit ══ -->
+  <section class="screen" data-screen="0" id="s0">
+    <div class="select-content">
+      <div class="select-head">
+        <h1 class="select-title">أي شخصية تريدون أن ترافقكم؟</h1>
+      </div>
+      <!-- direction:ltr → first DOM child = leftmost. Left = character-2
+           (wheelchair), right = character-1 (pink), per the slide notes. -->
+      <div class="option-cards" role="radiogroup" aria-label="اختاروا شخصية">
+        <div class="option-card" role="radio" aria-checked="false" tabindex="0"
+             data-value="character-2" aria-label="شخصية وحش مكسو بالفراء على كرسي متحرك" onclick="selectOption(this)">
+          <div class="option-card-img"><video class="option-card-video"
+              src="assets/video/character-2-selection.mp4"
+              autoplay loop muted playsinline preload="auto"
+              aria-label="شخصية وحش فروي على كرسي متحرك"></video>
+          </div>
+        </div>
+        <div class="option-card" role="radio" aria-checked="false" tabindex="0"
+             data-value="character-1" aria-label="شخصية وحش مكسوّ بالفرو ورديّ اللون" onclick="selectOption(this)">
+          <div class="option-card-img"><video class="option-card-video"
+              src="assets/video/character-1-selection.mp4"
+              autoplay loop muted playsinline preload="auto"
+              aria-label="شخصية وحش مكسو بالفرو بلون وردي"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-continue" id="s0-continue" disabled onclick="goTo(1)">اخترت</button>
+  </section>
+
+  <!-- ══ S1 — slide 4: hook — pick a song (no right answer; continue gates on a pick) ══ -->
+<section class="screen" data-screen="1" id="s1">
+    <div class="hook-content">
+      <h1 class="hook-title" data-reveal="1">أي أغنية ستدخل إلى قائمة التشغيل؟</h1>
+      <p class="hook-lines" data-reveal="2">قائمة التشغيل «أغاني السنة» ستُنشر بعد دقائق قليلة.<br> بقي مكان شاغر واحد فقط، والأغنيتان اللتان أمامكم مرشحتان للدخول إليه.<br> <strong>دون أن تستمعوا إلى الأغنيتين، اضغطوا على الأغنية التي كنتم ستختارون إضافتها إلى قائمة التشغيل:</strong></p>
+      <div class="hook-row">
+        <div class="song-cards" role="radiogroup" aria-label="اختاروا أغنية" data-reveal="3">
+          <div class="song-card" role="radio" aria-checked="false" tabindex="0" data-value="dream"
+               onclick="songPick(this)"
+               onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();songPick(this);}">
+            <img src="assets/img/song-dream.png" alt='بطاقة الأغنية «طريق الحلم»: 500,000 استماع، 10,000 حفظ'>
+          </div>
+          <div class="song-card" role="radio" aria-checked="false" tabindex="0" data-value="tiger"
+               onclick="songPick(this)"
+               onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();songPick(this);}">
+            <img src="assets/img/song-tiger.png" alt='بطاقة الأغنية «النمر الشاحب»: 20,000 استماع، 4,000 حفظ'>
+          </div>
+        </div>
+        <div class="g-widget" data-reveal="4" data-reveal-fade>
+          <div class="rs-bubble rs-bubble--beside g-widget-bubble"><svg class="rs-bubble-shape" viewBox="0 0 241 137" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-right"/></svg><span class="rs-bubble-text">واااو، هذه مسابقة صعبة!</span></div>
+          <img data-char-pose="music" src="assets/img/character-1-music.png" alt="الشخصية المرافقة ترقص وهي ترتدي سماعات الأذن">
+        </div>
+      </div>
+    </div>
+    <button class="btn-continue" id="s1-continue" disabled onclick="goTo(2)">متابعة</button>
+    <button class="btn-back" onclick="goTo(0)">رجوع</button>
+  </section>
+
+  <!-- ══ S2 — slide 5: the editors' pick reveal ══ -->
+<section class="screen" data-screen="2" id="s2">
+    <div class="hook-content reveal-content">
+      <h1 class="hook-title" data-reveal="1">اختيار المحرّرين!</h1>
+      <p class="hook-lines" data-reveal="2">الأغنية التي تم اختيارها لقائمة التشغيل "أغاني العام" هي...</p>
+      <div class="reveal-drum" data-reveal="3" aria-hidden="true">🥁</div>
+      <div class="reveal-name" data-reveal="3">النمر الشاحب!</div>
+      <div class="hook-row reveal-row">
+        <div class="reveal-stack" data-reveal="4">
+          <img class="reveal-card reveal-loser" src="assets/img/song-dream.png" alt='بطاقة أغنية «طريق الحلم»'>
+          <img class="reveal-card reveal-winner" src="assets/img/song-tiger.png" alt='بطاقة أغنية «النمر الشاحب» — الفائزة'>
+        </div>
+        <div class="g-widget" data-reveal="4" data-reveal-fade>
+          
+          <img data-char-pose="music" src="assets/img/character-1-music.png" alt="الشخصية المرافقة تحتفل وهي ترتدي سماعات الأذن">
+        </div>
+      </div>
+    </div>
+    <button class="btn-continue" id="s2-continue" onclick="goTo(3)">متابعة</button>
+    <button class="btn-back" onclick="goTo(1)">رجوع</button>
+  </section>
+
+  <!-- ══ S3 — slide 6: מפתיע, נכון? ══ -->
+<section class="screen" data-screen="3" id="s3">
+    <div class="hook-content">
+      <h1 class="hook-title" data-reveal="1">مفاجئ، أليس كذلك؟</h1>
+      <p class="hook-lines" data-reveal="2">للوهلة الأولى يبدو أن «طريق الحلم» أكثر إثارة للإعجاب،<br> فلديه مرات استماع أكثر ومرات حفظ أكثر أيضًا.<br> ومع ذلك، اختار محرّرو قائمة التشغيل «النمر الشاحب» بالذات. 🤔<br> <strong>ماذا حدث هنا؟</strong><br> <strong>سنكتشف ذلك لاحقًا في هذه الوحدة...</strong></p>
+      <div class="hook-row">
+        <img class="pair-img" data-reveal="3" src="assets/img/song-pair.png" alt="بطاقتا الأغنيتين جنبًا إلى جنب">
+        <!-- producer 31.08: same monster art as the previous screen (the
+             whisper pose was still a placeholder), bubble above with the tail
+             pointing down at it -->
+        <div class="g-widget g-widget--above" data-reveal="4" data-reveal-fade>
+          <div class="rs-bubble rs-bubble--above g-widget-bubble"><svg class="rs-bubble-shape" viewBox="0 0 216 89" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-down"/></svg><span class="rs-bubble-text">سبويلر!<br>استخدم المحررون النسب المئوية لمقارنة الأغاني بشكل عادل!</span></div>
+          <img data-char-pose="music" src="assets/img/character-1-music.png" alt="الشخصية المرافقة تهمس بسر">
+        </div>
+      </div>
+    </div>
+    <button class="btn-continue" id="s3-continue" onclick="goTo(4)">متابعة</button>
+    <button class="btn-back" onclick="goTo(2)">رجوع</button>
+  </section>
+
+  <!-- ══ S4 — slide 7: how do you want to learn? (read / video) ══ -->
+<section class="screen" data-screen="4" id="s4">
+    <div class="select-content">
+      <div class="select-head">
+        <h1 class="select-title">هيا بنا نتعلم عن النسب المئوية كأساس لمقارنة عادلة</h1>
+        <p class="select-subtitle">اختاروا كيف ترغبون في التعلم:</p>
+      </div>
+      <div class="option-cards" role="radiogroup" aria-label="اختاروا كيف ترغبون في التعلم:">
+        <div class="option-card learn-card" role="radio" aria-checked="false" tabindex="0"
+             data-value="video" onclick="learnPick(this)"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();learnPick(this);}">
+          <div class="option-card-img"><img data-char-pose="popcorn" src="assets/img/character-1-popcorn.png" alt="الشخصية مع الفشار — لمشاهدة الفيديو"></div>
+          <div class="learn-card-label">مشاهدة فيديو قصير</div>
+        </div>
+        <div class="option-card learn-card" role="radio" aria-checked="false" tabindex="0"
+             data-value="read" onclick="learnPick(this)"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();learnPick(this);}">
+          <div class="option-card-img"><img data-char-pose="reading" src="assets/img/character-1-reading.png" alt="الشخصية تقرأ كتابًا — قراءة الخلاصة"></div>
+          <div class="learn-card-label">قراءة الخلاصة</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-continue" id="s4-continue" disabled onclick="learnGo()">اخترت</button>
+    <button class="btn-back" onclick="goTo(3)">رجوع</button>
+  </section>
+
+  <!-- ══ S5 — slides 8-16: the "read" path — ONE scroll screen, a section per
+       slide (approved scroll policy) ══ -->
+<section class="screen" data-screen="5" id="s5">
+    <div class="read-head">
+      <h1 class="read-title">كيف نقارن بشكل عادل؟</h1>
+      <div class="read-cue"><strong>مرّروا للأسفل للمتابعة</strong></div>
+    </div>
+    <div class="read-scroll" id="s5-scroll">
+      <div class="read-figure" aria-hidden="true">
+        <img id="s5-figure" src="assets/img/read-art-8.png" alt="">
+      </div>
+      <div class="read-inner">
+        <div class="read-block" data-art="assets/img/read-art-8.png" data-alt="بطاقتا الأغنيتين — «طريق الحلم» و«النمر الشاحب» — جنبًا إلى جنب">
+          <div class="read-text">
+            <p>للوهلة الأولى يبدو أن «طريق الحلم» أنجح، فعدد مرات الاستماع إليه أكبر بكثير، وعدد مرات حفظه أكبر بكثير أيضًا.<br>لكن مهلًا...</p>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-9.png" data-alt="بطاقتا الأغنيتين، وكلتاهما ضبابيتان">
+          <div class="read-text">
+            <p>لأغنية «طريق الحلم» 10,000 حفظ، ولأغنية «النمر الشاحب» 4,000 حفظ فقط — أي أن «طريق الحلم» أنجح، أليس كذلك؟<br> ليس بالضرورة!<br> استمع إلى أغنية «طريق الحلم» 500,000 شخص، بينما استمع إلى «النمر الشاحب» 20,000 فقط — وهذا عدد أقل بكثير.<br> <strong>لذلك لا يمكن الاكتفاء بعدد مرات الحفظ وحده.</strong></p>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-10.png" data-alt="بطاقتا الأغنيتين — «طريق الحلم» و«النمر الشاحب» — جنبًا إلى جنب">
+          <div class="read-text">
+            <p>لإجراء مقارنة عادلة، علينا أن نفحص كم من المستمعين اختاروا حفظ الأغنية.<br>كيف سنفعل ذلك؟</p>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-11.png" data-alt="بطاقتا الأغنيتين — «طريق الحلم» و«النمر الشاحب» — جنبًا إلى جنب">
+          <div class="read-text">
+            <p>لنجعل جميع المستمعين <strong>100%</strong>،<br>ثم نحسب نسبة عمليات الحفظ من مجموع مرات الاستماع.</p>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-12.png" data-alt="بطاقة ">
+          <div class="read-text">
+            <p>لأغنية «النمر الشاحب» 20,000 استماع، ومنها 4,000 عملية حفظ.<br> لنجعل جميع المستمعين 100%، وسنكتشف أن 20% من المستمعين اختاروا حفظ الأغنية.</p>
+            <div class="read-eq" dir="ltr">
+            <span class="fraction"><span class="frac-top">4,000</span><span class="frac-bottom">20,000</span></span>
+            <span class="eq-sign">=</span>
+            <span class="fraction"><span class="frac-top">20</span><span class="frac-bottom">100</span></span>
+            <span class="eq-sign">=</span><span class="eq-res">20%</span>
+          </div>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-13.png" data-alt="بطاقة ">
+          <div class="read-text">
+            <p>لأغنية «طريق الحلم» 500,000 استماع، ومن بينها 10,000 عملية حفظ.<br> لنجعل جميع المستمعين 100%، وسنكتشف أن 2% فقط من المستمعين اختاروا حفظ الأغنية.</p>
+            <div class="read-eq" dir="ltr">
+            <span class="fraction"><span class="frac-top">10,000</span><span class="frac-bottom">500,000</span></span>
+            <span class="eq-sign">=</span>
+            <span class="fraction"><span class="frac-top">2</span><span class="frac-bottom">100</span></span>
+            <span class="eq-sign">=</span><span class="eq-res">2%</span>
+          </div>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-14.png" data-alt="بطاقة ">
+          <div class="read-text">
+            <p>رغم أن «طريق الحلم» لديه عمليات حفظ أكثر،<br>فإن لدى «النمر الشاحب» <strong>نسبة</strong> حفظ أعلى بكثير.</p>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-15.png" data-alt="بطاقتا الأغنيتين — «طريق الحلم» و«النمر الشاحب» — جنبًا إلى جنب">
+          <div class="read-text">
+            <p>عند المقارنة بين <strong>مجموعات بأحجام مختلفة</strong>، قد تضلّلنا الأعداد وحدها.<br> وهذا صحيح عند المقارنة بين الأغاني، وكذلك في مقارنات أخرى:</p>
+          </div>
+        </div>
+        <div class="read-block" data-art="assets/img/read-art-16.png" data-alt="بطاقتا الأغنيتين — «طريق الحلم» و«النمر الشاحب» — جنبًا إلى جنب">
+          <div class="read-text">
+            <p>تتيح لنا النسبة المئوية أن نجعل "الكل" عند الجميع يساوي 100،<br> وعندها نستطيع أن نحدد من نجح فعلًا أكثر، ومن وفّر أكثر، أو ما هو الأجدى.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-continue" id="s5-continue" disabled onclick="goTo(7)">متابعة</button>
+    <!-- mode switch (Figma 2903:44465, vendored geometry): white segment =
+         the active mode; the watch mode routes to slide 17's video screen
+         (next range — stub until it exists) -->
+    <div class="mode-switch" role="group" aria-label="اختيار طريقة التعلّم">
+      <button class="mode-seg is-active" type="button" aria-pressed="true">
+        <span class="mode-seg-label">قراءة الخلاصة</span>
+        <svg class="mode-icon mode-icon-read" viewBox="0 0 19.5 25.3776" aria-hidden="true">
+          <path d="M3.13776 0.75H16.3622C17.6809 0.75 18.75 1.81903 18.75 3.13775V24.6275H0.75V3.13775C0.75 1.81903 1.81903 0.75 3.13776 0.75Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M14.5258 4.97452H4.97479V6.44391H14.5258V4.97452Z" stroke="currentColor" fill="none"/>
+          <path d="M14.5258 10.1175H4.97479V11.5869H14.5258V10.1175Z" stroke="currentColor" fill="none"/>
+          <path d="M14.5256 15.2602H8.64807V16.7296H14.5256V15.2602Z" stroke="currentColor" fill="none"/>
+        </svg>
+      </button>
+      <button class="mode-seg" type="button" aria-pressed="false" onclick="goTo(6)">
+        <span class="mode-seg-label">مشاهدة الفيديو</span>
+        <svg class="mode-icon mode-icon-watch" viewBox="0 0 21.3311 21.3314" aria-hidden="true">
+          <path d="M10.6654 21.3311C7.81657 21.3311 5.13834 20.2217 3.12369 18.2071C1.10936 16.1928 0 13.5142 0 10.6654C0 7.81657 1.10936 5.13834 3.12369 3.12401C5.13834 1.10936 7.81657 0 10.6654 0C13.5142 0 16.1924 1.10936 18.2071 3.12401C20.2214 5.13834 21.3311 7.81689 21.3311 10.6657C21.3311 13.5145 20.2217 16.1928 18.2071 18.2074C16.1928 20.2217 13.5142 21.3314 10.6654 21.3314V21.3311Z" fill="currentColor"/>
+          <path class="mode-icon-play" d="M6.40469 16.4193C5.88206 16.4193 5.457 15.9942 5.457 15.4716V5.63209C5.457 5.10946 5.88206 4.6844 6.40469 4.6844C6.57019 4.6844 6.72899 4.72744 6.87631 4.81258L15.3976 9.7325C15.6938 9.90342 15.8708 10.2099 15.8708 10.552C15.8708 10.8942 15.6938 11.2006 15.3976 11.3715L6.87631 16.2914C6.72899 16.3766 6.57019 16.4196 6.40469 16.4193Z"/>
+        </svg>
+      </button>
+    </div>
+    <button class="btn-back" onclick="goTo(4)">رجوع</button>
+  </section>
+
+  <!-- ══ S6 — slide 17: the "watch" path. Same content as S5, delivered as a
+       video. Slides 18-19 are the מה רואים?/קריינות storyboard for this clip,
+       not screens of their own. ══ -->
+<section class="screen" data-screen="6" id="s6">
+    <div class="watch-head">
+      <h1 class="read-title">كيف نقارن بشكل عادل؟</h1>
+      <p class="watch-cue"><strong>اضغطوا على الفيديو للمشاهدة:</strong></p>
+    </div>
+    <div class="watch-stage">
+      <!-- VideoPathViewer — the pattern from methodica-math-percent-02-01's #s7:
+           a plain 646x363 rounded black frame that the YouTube IFrame Player API
+           fills with the player itself (no poster, no hand-rolled play button).
+           The producer's clip is youtu.be/BpGGIwaJEYQ (06.10), embedded on the
+           nocookie host. המשך opens when the player fires ENDED — and also on
+           onError, so a blocked embed never strands the learner. -->
+      <div class="video-frame" id="s6-video-wrap">
+        <div id="s6-youtube-player"></div>
+      </div>
+      <div class="g-widget g-widget--above watch-widget">
+        <div class="rs-bubble rs-bubble--above g-widget-bubble"><svg class="rs-bubble-shape" viewBox="0 0 216 89" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-down"/></svg><span class="rs-bubble-text">هل تريد قليلًا؟</span></div>
+        <img data-char-pose="popcorn" src="assets/img/character-1-popcorn.png" alt="الشخصية المرافقة مع الفشار">
+      </div>
+    </div>
+    <button class="btn-continue" id="s6-continue" disabled onclick="goTo(7)">متابعة</button>
+    <!-- same switch as S5, with the watch segment active -->
+    <div class="mode-switch" role="group" aria-label="اختيار طريقة التعلّم">
+      <button class="mode-seg" type="button" aria-pressed="false" onclick="goTo(5)">
+        <span class="mode-seg-label">قراءة الخلاصة</span>
+        <svg class="mode-icon mode-icon-read" viewBox="0 0 19.5 25.3776" aria-hidden="true">
+          <path d="M3.13776 0.75H16.3622C17.6809 0.75 18.75 1.81903 18.75 3.13775V24.6275H0.75V3.13775C0.75 1.81903 1.81903 0.75 3.13776 0.75Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <path d="M14.5258 4.97452H4.97479V6.44391H14.5258V4.97452Z" stroke="currentColor" fill="none"/>
+          <path d="M14.5258 10.1175H4.97479V11.5869H14.5258V10.1175Z" stroke="currentColor" fill="none"/>
+          <path d="M14.5256 15.2602H8.64807V16.7296H14.5256V15.2602Z" stroke="currentColor" fill="none"/>
+        </svg>
+      </button>
+      <button class="mode-seg is-active" type="button" aria-pressed="true">
+        <span class="mode-seg-label">مشاهدة الفيديو</span>
+        <svg class="mode-icon mode-icon-watch" viewBox="0 0 21.3311 21.3314" aria-hidden="true">
+          <path d="M10.6654 21.3311C7.81657 21.3311 5.13834 20.2217 3.12369 18.2071C1.10936 16.1928 0 13.5142 0 10.6654C0 7.81657 1.10936 5.13834 3.12369 3.12401C5.13834 1.10936 7.81657 0 10.6654 0C13.5142 0 16.1924 1.10936 18.2071 3.12401C20.2214 5.13834 21.3311 7.81689 21.3311 10.6657C21.3311 13.5145 20.2217 16.1928 18.2071 18.2074C16.1928 20.2217 13.5142 21.3314 10.6654 21.3314V21.3311Z" fill="currentColor"/>
+          <path class="mode-icon-play" d="M6.40469 16.4193C5.88206 16.4193 5.457 15.9942 5.457 15.4716V5.63209C5.457 5.10946 5.88206 4.6844 6.40469 4.6844C6.57019 4.6844 6.72899 4.72744 6.87631 4.81258L15.3976 9.7325C15.6938 9.90342 15.8708 10.2099 15.8708 10.552C15.8708 10.8942 15.6938 11.2006 15.3976 11.3715L6.87631 16.2914C6.72899 16.3766 6.57019 16.4196 6.40469 16.4193Z"/>
+        </svg>
+      </button>
+    </div>
+    <button class="btn-back" onclick="goTo(4)">رجوع</button>
+  </section>
+
+  <!-- S7 = slide 20 (the נועם/עינת question) is GENERATED from QUESTIONS -->
+
+  <!-- ══ S8 — slide 21: רגע, זה לא פייר! ══ -->
+<section class="screen" data-screen="8" id="s8">
+    <!-- RTL flex: first child renders rightmost. The deck puts the art LEFT and
+         the bubble RIGHT, so the bubble leads. -->
+    <div class="fair-row">
+      <div class="rs-bubble rs-bubble--beside fair-bubble" data-reveal="2" data-reveal-fade>
+        <svg class="rs-bubble-shape" viewBox="0 0 241 137" preserveAspectRatio="none" aria-hidden="true"><use href="#bubble-tail-right"/></svg>
+        <span class="rs-bubble-text">مهلًا، هذا ليس عادلًا!<br>رغم أنكنّ حصلتنّ على الكمية نفسها من الطعام، فإن مجموعتكنّ أكلت أكثر....</span>
+      </div>
+      <!-- companion clip, one per monster (producer 31.08) -->
+      <video class="fair-img" data-reveal="1" data-char-clip="ants"
+             autoplay loop muted playsinline preload="auto"
+             aria-label="تنظر الشخصية المرافقة إلى مجموعتين من النمل بحجمين مختلفين حول الكمية نفسها من الطعام"></video>
+    </div>
+    <button class="btn-continue" id="s8-continue" onclick="goTo(9)">متابعة</button>
+    <button class="btn-back" onclick="goTo(7)">رجوع</button>
+  </section>
+
+  <!-- ══ S9 — slide 22: עוד מעט נתחיל לתרגל ══ -->
+<section class="screen" data-screen="9" id="s9">
+    <div class="hook-content">
+      <h1 class="hook-title" data-reveal="1">سنبدأ التدريب بعد قليل،</h1>
+      <p class="hook-lines" data-reveal="1">قبل ذلك مباشرة، تعالوا نحل تمرينًا واحدًا معًا.</p>
+      <!-- the producer's pair clip, one per monster (31.08) -->
+      <div class="pair-chars" data-reveal="2" data-reveal-fade>
+        <video data-char-clip="pair" autoplay loop muted playsinline preload="auto"
+               aria-label="الشخصيتان المرافقتان معًا"></video>
+      </div>
+    </div>
+    <button class="btn-continue" id="s9-continue" onclick="goTo(10)">متابعة</button>
+    <button class="btn-back" onclick="goTo(8)">رجوع</button>
+  </section>
+
+  <!-- ══ S10-S17 — deck slides 23-30: the guided exercise. ONE SCREEN PER DECK
+       SLIDE, as the approved Guided Instruction Flow does it (ratio-01-01
+       S6-S10, percent-04 S10-S20): the exercise card repeats on every screen
+       and the step callout changes. Generated by buildGuidedScreens(). ══ -->
+
+  <!-- ══ S18 — slide 31: רק רגע... ══ -->
+<section class="screen" data-screen="18" id="s18">
+    <div class="hook-content">
+      <h1 class="hook-title" data-reveal="1">لحظة فقط...</h1>
+      <p class="hook-lines" data-reveal="1">لنتأكد من أننا فهمنا الفكرة،<br>ولنلعب لعبة المقارنات!</p>
+      <div class="pair-chars" data-reveal="2" data-reveal-fade>
+        <video data-char-clip="game" autoplay loop muted playsinline preload="auto"
+               aria-label="الشخصية المرافقة تلعب بعصا التحكم"></video>
+      </div>
+    </div>
+    <button class="btn-continue" id="s18-continue" onclick="goTo(19)">متابعة</button>
+    <button class="btn-back" onclick="goTo(17)">رجوع</button>
+  </section>
+
+  <!-- ══ S19 — slide 32: "מי באמת יותר טוב?" — the producer's own applet
+       (applets/comparison-game.html, supplied 01.09). It replaces the six
+       rounds built from the deck's single mock-up frame. ══ -->
+<section class="screen" data-screen="19" id="s19">
+    <div class="applet-stage" id="s19-applet"></div>
+    <button class="btn-continue" id="s19-continue" onclick="goTo(20)">متابعة</button>
+    <button class="btn-back" onclick="goTo(18)">رجوع</button>
+  </section>
+
+  <!-- ══ S20 — slide 33: מה נשאר לנו בראש? ══ -->
+<section class="screen" data-screen="20" id="s20">
+    <div class="hook-content">
+      <h1 class="hook-title" data-reveal="1">ماذا بقي في أذهننا؟</h1>
+      <p class="hook-lines" data-reveal="1">سؤال خفيف للإحماء قبل أن نتقدّم.</p>
+      <div class="pair-chars" data-reveal="2" data-reveal-fade>
+        <video data-char-clip="warmup" autoplay loop muted playsinline preload="auto"
+               aria-label="الشخصية المرافقة تقوم بالإحماء قبل الأسئلة"></video>
+      </div>
+    </div>
+    <button class="btn-continue" id="s20-continue" onclick="goTo(21)">خذوني إلى الأسئلة</button>
+    <button class="btn-back" onclick="goTo(19)">رجوع</button>
+  </section>
+
+  <!-- S21 = slide 34 (warm-up question) is GENERATED from QUESTIONS -->
+
+  <!-- S23-S28 = slides 36-41 (practice set 1) are GENERATED from QUESTIONS -->
+
+  <!-- ══ S28 — slide 43: the retry intro ══ -->
+
+
+  <!-- Applet modal — a "?" badge beside a term opens the matching יישומון -->
+  <div id="applet-modal" class="applet-modal hidden" role="dialog" aria-modal="true" aria-labelledby="applet-modal-title"
+       onclick="if(event.target===this) closeApplet()">
+    <div class="applet-modal-panel">
+      <div class="applet-modal-head">
+        <h2 class="applet-modal-title" id="applet-modal-title"></h2>
+        <button class="applet-modal-x" type="button" aria-label="إغلاق" onclick="closeApplet()">✕</button>
+      </div>
+      <div class="applet-modal-body" id="applet-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Hint modal — approved component, vendored verbatim (percent-04 ← ratio-01-02).
+       The rays-bulb title icon is part of it; do not ship this without it. -->
+  <div id="quiz-hint-overlay" class="scq-hint-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="quiz-hint-title"
+       onclick="if(event.target===this) quizCloseHint()">
+    <div class="scq-hint-popup">
+      <div class="scq-hint-text">
+        <h2 class="scq-hint-title" id="quiz-hint-title"><svg class="scq-hint-title-icon" viewBox="0 0 25.9999 22.2883" fill="none" aria-hidden="true"><path d="M17.7925 2.76345C16.3676 1.37911 14.5057 0.68776 12.5488 0.815545C9.07995 1.04163 6.27286 3.9168 6.01796 7.50134C5.85646 9.77363 6.7035 11.9443 8.34374 13.4548C9.23036 14.2723 9.74016 15.465 9.74016 16.7265H11.2284H14.7733H16.2615C16.2615 15.4847 16.7919 14.2707 17.7181 13.3959C19.17 12.0263 20.0012 10.0751 20.0012 8.04361C20.0012 6.01215 19.1953 4.12486 17.7909 2.76018L17.7925 2.76345ZM13.0001 5.54524C11.6701 5.54524 10.5856 6.66582 10.5856 8.04525C10.5856 8.46956 10.2515 8.81524 9.84149 8.81524C9.43143 8.81524 9.09736 8.46956 9.09736 8.04525C9.09736 5.8172 10.8484 4.00527 13.0001 4.00527C13.4133 4.00527 13.7473 4.35094 13.7473 4.77525C13.7473 5.19957 13.4133 5.54524 13.0001 5.54524Z" fill="currentColor"/><path d="M9.73858 19.6245C9.73858 20.3289 9.99823 20.9908 10.478 21.4904L10.4938 21.5068C10.9783 22.0098 11.6242 22.2883 12.3114 22.2883H13.6888C14.3775 22.2883 15.025 22.0114 15.5111 21.5052C15.9956 21.0039 16.2631 20.3355 16.2631 19.6277V17.9895H9.73858V19.6245ZM11.2268 19.5294H14.7717V19.6277C14.7717 19.9243 14.6609 20.2077 14.4566 20.419C14.254 20.6254 13.9753 20.7483 13.6888 20.7483H12.3114C12.028 20.7483 11.7588 20.6336 11.5561 20.4305L11.5451 20.4174C11.3424 20.211 11.2268 19.9226 11.2268 19.6261V19.5311V19.5294Z" fill="currentColor"/><path d="M25.2558 7.27531H22.607C22.1954 7.27531 21.8629 7.62099 21.8629 8.0453C21.8629 8.46961 22.197 8.81529 22.607 8.81529H25.2558C25.6674 8.81529 25.9999 8.46961 25.9999 8.0453C25.9999 7.62099 25.6658 7.27531 25.2558 7.27531Z" fill="currentColor"/><path d="M4.1386 8.0453C4.1386 7.61935 3.80453 7.27531 3.39447 7.27531H0.744124C0.332481 7.27531 0 7.62099 0 8.0453C0 8.46961 0.334064 8.81529 0.744124 8.81529H3.39289C3.80453 8.81529 4.13701 8.46961 4.13701 8.0453H4.1386Z" fill="currentColor"/><path d="M20.8702 3.11398C21.0175 3.11398 21.1663 3.06811 21.2961 2.97472L23.4667 1.40198C23.804 1.15788 23.8847 0.677863 23.6488 0.328911C23.4129 -0.0200418 22.949 -0.105232 22.6118 0.140509L20.4412 1.71325C20.1039 1.95736 20.0232 2.43737 20.2591 2.78632C20.4032 3.00094 20.6343 3.11562 20.8702 3.11562V3.11398Z" fill="currentColor"/><path d="M4.70372 13.1172L2.53309 14.69C2.19586 14.9341 2.11512 15.4141 2.35102 15.763C2.49509 15.9777 2.72625 16.0923 2.96215 16.0923C3.10939 16.0923 3.25822 16.0465 3.38804 15.9531L5.55867 14.3803C5.8959 14.1362 5.97665 13.6562 5.74074 13.3073C5.50484 12.9583 5.04095 12.8731 4.70372 13.1189V13.1172Z" fill="currentColor"/><path d="M23.4668 14.6884L21.2961 13.1157C20.9589 12.8716 20.495 12.9567 20.2591 13.3041C20.0232 13.653 20.1055 14.133 20.4412 14.3771L22.6118 15.9499C22.7416 16.0449 22.8904 16.0891 23.0377 16.0891C23.272 16.0891 23.5032 15.9744 23.6488 15.7598C23.8847 15.4109 23.8024 14.9309 23.4668 14.6868V14.6884Z" fill="currentColor"/><path d="M5.55869 1.71322L3.38806 0.140478C3.05083 -0.103625 2.58694 -0.0184349 2.35104 0.328879C2.11513 0.677832 2.19746 1.15785 2.53311 1.40195L4.70374 2.97469C4.83356 3.06971 4.98239 3.11395 5.12963 3.11395C5.36395 3.11395 5.5951 2.99927 5.74076 2.78465C5.97666 2.4357 5.89434 1.95569 5.55869 1.71158V1.71322Z" fill="currentColor"/></svg> تلميح</h2>
+        <div class="scq-hint-body"></div>
+      </div>
+      <button class="scq-hint-close" type="button" onclick="quizCloseHint()">رجوع إلى السؤال</button>
+    </div>
+  </div>
+
+  <!-- Problem-report modal (approved-units pattern; posts to the shared Google Form) -->
+  <div id="report-modal" class="report-modal-overlay m-popup" hidden role="dialog" aria-modal="true" aria-labelledby="report-modal-title">
+    <div class="report-modal-box">
+      <button class="report-close-btn" onclick="tryCloseReportModal()" aria-label="إغلاق">&#10005;</button>
+      <h2 class="report-modal-title" id="report-modal-title">الإبلاغ عن مشكلة</h2>
+      <p class="report-modal-body">هل هناك شيء غير واضح أو لا يعمل بشكل صحيح؟ أخبرونا بما حدث حتى نتمكن من المعالجة.</p>
+      <div class="report-field">
+        <label class="report-label" for="report-type">ما نوع المشكلة <span class="required-star">*</span></label>
+        <select class="report-select" id="report-type">
+          <option value="" disabled selected>اختاروا نوع المشكلة</option>
+          <option value="technical">عطل تقني أو أن شيئاً ما لا يعمل</option>
+          <option value="unclear">شيء ما غير واضح لي</option>
+          <option value="other">آخر</option>
+        </select>
+      </div>
+      <div class="report-field">
+        <label class="report-label" for="report-text">ماذا حدث؟ <span class="required-star">*</span></label>
+        <textarea class="report-textarea" id="report-text" maxlength="250" rows="4" placeholder="صفوا المشكلة..."></textarea>
+        <span class="report-char-count" id="report-char-count">0 / 250</span>
+      </div>
+      <p class="report-error" id="report-error" hidden>يرجى تحديد نوع المشكلة ووصف ما حدث.</p>
+      <div class="report-actions">
+        <button class="report-submit-btn" onclick="submitReport()">إرسال</button>
+        <button class="report-cancel-btn" onclick="tryCloseReportModal()">إلغاء</button>
+      </div>
+      <div class="report-thanks" id="report-thanks" hidden>
+        <p>شكرًا! تم إرسال البلاغ. سنتعامل معه في أقرب وقت.</p>
+        <button class="report-submit-btn" onclick="forceCloseReportModal()">إغلاق</button>
+      </div>
+    </div>
+  </div>
+  <div id="report-confirm-modal" class="report-modal-overlay m-popup" hidden role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+    <div class="report-modal-box report-confirm-box">
+      <h2 class="report-modal-title" id="confirm-modal-title">هل أنتم متأكدون من إغلاق النافذة؟</h2>
+      <p class="report-modal-body">عند النقر على «إغلاق» لن يُرسَل البلاغ</p>
+      <div class="report-actions">
+        <button class="report-cancel-btn" onclick="forceCloseReportModal()">إغلاق النافذة</button>
+        <button class="report-submit-btn" onclick="backToReportForm()">أريد الإبلاغ</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<script src="../unit-js/motion.js?v=20261007a"></script>
+<script src="../unit-js/quiz-engine.js?v=20261007a"></script>
+<script src="../unit-js/questions.js?v=20261007a"></script>
+<script src="../unit-js/report-modal.js?v=20261007a"></script>
+<script src="../unit-js/unit.js?v=20261007a"></script>
+<script src="script.js?v=20261007a"></script>
+<script src="../unit-js/engine.js?v=20261007a"></script>
+</body>
+</html>

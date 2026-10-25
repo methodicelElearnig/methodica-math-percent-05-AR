@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>DEV — אחוזים 05 (יעד 4.5)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #1a1a2e; font-family: monospace; }
+
+    #dev-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 44px;
+      background: #f9ca24; color: #1a1a2e;
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 12px; z-index: 9999; font-size: 13px; font-weight: 700;
+      direction: ltr;
+      transition: background 0.2s ease;
+    }
+    /* review status of the CURRENT screen colors the whole bar:
+       green = approved, striped strong-yellow = needs fixing */
+    #dev-bar.st-ok  { background: #2ecc71; }
+    #dev-bar.st-fix {
+      background: repeating-linear-gradient(45deg, #f9ca24 0 18px, #f39c12 18px 36px);
+    }
+    .st-btn {
+      height: 28px; width: 34px; border: none; border-radius: 4px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+    }
+    #st-ok    { background: #1e8f4e; color: #fff; }
+    #st-fix   { background: #b06f00; color: #fff; }
+    #st-clear { background: #1a1a2e; color: #f9ca24; }
+    #st-badge {
+      min-width: 74px; text-align: center;
+      padding: 3px 10px; border-radius: 1000px;
+      background: rgba(26, 26, 46, 0.85); color: #fff; font-size: 12px;
+    }
+    #dev-bar span { background: #1a1a2e; color: #f9ca24; padding: 2px 8px; border-radius: 4px; }
+    #dev-bar button {
+      height: 28px; padding: 0 12px; border: none; border-radius: 4px;
+      background: #1a1a2e; color: #f9ca24; font-weight: 700; cursor: pointer; font-size: 13px;
+    }
+    #dev-bar button:hover { background: #333; }
+    #dev-bar input[type=number] {
+      width: 54px; height: 28px; border: none; border-radius: 4px;
+      text-align: center; font-size: 14px; font-weight: 700;
+    }
+    #dev-bar button.mark-btn.on { background: #e17055; color: #fff; }
+    #assets-panel {
+      position: fixed; inset: 44px 0 0 0; z-index: 40; overflow: auto;
+      background: rgba(26, 26, 46, .97); color: #fff; padding: 18px 24px;
+      font-family: system-ui, sans-serif; direction: rtl;
+    }
+    #assets-panel.hidden { display: none; }
+    #assets-panel h2 { margin: 0 0 4px; font-size: 18px; }
+    #assets-panel .sub { margin: 0 0 14px; font-size: 13px; opacity: .75; }
+    #assets-panel table { border-collapse: collapse; width: 100%; font-size: 13px; }
+    #assets-panel th { text-align: right; padding: 6px 10px; border-bottom: 1px solid #444; opacity: .8; }
+    #assets-panel td { padding: 6px 10px; border-bottom: 1px solid #2c2c44; vertical-align: top; }
+    #assets-panel tr.missing td:first-child { color: #ff6b6b; font-weight: 700; }
+    #assets-panel tr.placeholder td:first-child { color: #f9ca24; font-weight: 700; }
+    #assets-panel tr.manual td:first-child { color: #e17055; font-weight: 700; }
+    #assets-panel td.script { color: #dfe6e9; max-width: 380px; }
+    #assets-panel td.script .none { opacity: .45; }
+    #assets-panel td.go { color: #74b9ff; cursor: pointer; text-decoration: underline; }
+    #assets-panel .ok { color: #2ecc71; font-size: 15px; }
+    #assets-panel .close {
+      position: absolute; left: 24px; top: 14px; background: #333; color: #fff;
+      border: 0; border-radius: 4px; padding: 4px 12px; cursor: pointer;
+    }
+    #dev-bar select {
+      height: 28px; max-width: 260px; border: none; border-radius: 4px;
+      background: #1a1a2e; color: #f9ca24; font-weight: 700; font-size: 13px;
+      padding: 0 8px; cursor: pointer; direction: rtl;
+    }
+    #dev-label { margin-left: 6px; }
+
+    #lomda-frame {
+      position: fixed; top: 44px; left: 0; right: 0; bottom: 0;
+      border: none; width: 100%; height: calc(100% - 44px);
+    }
+  </style>
+</head>
+<body>
+
+<div id="dev-bar">
+  <span>DEV</span>
+  <button onclick="nav(+1)" title="קדימה (RTL: שמאל = קדימה)">◀</button>
+  <span id="dev-label">S 0 / ?</span>
+  <button onclick="nav(-1)" title="אחורה (RTL: ימין = אחורה)">▶</button>
+  <input type="number" id="jump-input" min="0" value="0" onkeydown="if(event.key==='Enter')jumpTo()">
+  <button onclick="jumpTo()">Go</button>
+  <select id="screen-select" onchange="send(this.value)"></select>
+  <span id="st-badge">—</span>
+  <button class="st-btn" id="st-ok"    onclick="setStatus('ok')"    title="מאושר — עברתי ואישרתי">✓</button>
+  <button class="st-btn" id="st-fix"   onclick="setStatus('fix')"   title="דורש תיקון">!</button>
+  <button class="st-btn" id="st-clear" onclick="setStatus(null)"    title="איפוס סטטוס">↺</button>
+  <button id="assets-btn" onclick="scanAssets()" title="QA: תמונות וקליפים של הדמות שחסרים או שהם מציין מקום">🧸 נכסי דמות</button>
+  <button class="mark-btn" id="mark-img" onclick="toggleMark('img')" title="סימון ידני: בתסריט יש כאן תמונת דמות ובבנייה היא חסרה או שגויה">🖼</button>
+  <button class="mark-btn" id="mark-vid" onclick="toggleMark('vid')" title="סימון ידני: בתסריט יש כאן קליפ דמות ובבנייה הוא חסר או שגוי">🎬</button>
+  <span style="margin-right:auto; font-size:11px; font-weight:400;">Ctrl+← קדימה &nbsp;|&nbsp; Ctrl+→ אחורה</span>
+</div>
+
+<div id="assets-panel" class="hidden">
+  <button class="close" onclick="document.getElementById('assets-panel').classList.add('hidden')">סגור</button>
+  <h2>נכסי דמות — בדיקת QA</h2>
+  <p class="sub" id="assets-sub"></p>
+  <div id="assets-body"></div>
+</div>
+
+<script src="../unit-js/dev-notes.js"></script>
+
+<iframe id="lomda-frame" src="index.html"></iframe>
+
+<script>
+  const UNIT_ID = 'methodica-math-percent-05-06';
+  /* this component owns screens 61-66 of the unit's global numbering */
+  const PART_START = 61, PART_END = 66;
+  let cur = 0;
+  let total = 1;
+
+  const frame  = document.getElementById('lomda-frame');
+  const label  = document.getElementById('dev-label');
+  const input  = document.getElementById('jump-input');
+  const select = document.getElementById('screen-select');
+
+  /* Named screens — extend as screens are added */
+  const SCREEN_NAMES = [
+    'בחירת דמות (שקף 3)',
+    'הוק: איזה שיר ייכנס לפלייליסט? (שקף 4)',
+    'הוק: העורכים בחרו (שקף 5)',
+    'הוק: מפתיע, נכון? (שקף 6)',
+    'בחירה: איך תרצו ללמוד? (שקף 7)',
+    'הקנייה: גלילה — איך משווים בצורה הוגנת (שקפים 8-16)',
+    'הקנייה: סרטון — איך משווים בצורה הוגנת (שקף 17)',
+    'שאלה: מי הצליח יותר, נועם או עינת? (שקף 20)',
+    'רגע, זה לא פייר! (שקף 21)',
+    'עוד מעט נתחיל לתרגל (שקף 22)',
+    'מודרך: פתיחה (שקף 23)',
+    'מודרך: שאלה — אותה כמות? (שקף 24)',
+    'מודרך: נהפוך ל-100% (שקף 25)',
+    'מודרך: החישובים (שקף 26)',
+    'מודרך: שאלה — איזה אחוז גבוה יותר? (שקף 27)',
+    'מודרך: מסקנה (שקף 28)',
+    "מודרך: התשובה היא ב' (שקף 29)",
+    'מודרך: צדק למפעלים! (שקף 30)',
+    'רק רגע... משחק ההשוואות (שקף 31)',
+    'משחק: מי באמת יותר טוב? (שקף 32)',
+    'מה נשאר לנו בראש? (שקף 33)',
+    'חימום: רוני וגל — קליעות לסל (שקף 34)',
+    'מעבר לתרגול — 5 שאלות (שקף 35)',
+    'תרגול 1/5: אחוז ההנחה בחנויות (שקף 36)',
+    'תרגול 2/5: כותרת מגזין הספורט (שקף 37)',
+    'תרגול 3/5: בחירת הגבינה (שקף 38)',
+    'תרגול 4/5: איכות משלוחי השולחנות (שקף 39)',
+    'תרגול 5/5 א: השלמת טבלת המועמדים (שקף 40)',
+    'תרגול 5/5 ב: במי לבחור? (שקף 41)',
+    'ממשיכים לתרגל (שקף 43)',
+    'תרגול 1/6: ליהי — שלושה מבחנים (שקף 44)',
+    'תרגול 2/6 א: אחוז הפגיעות של אסף (שקף 45)',
+    'תרגול 2/6 ב: אחוז הפגיעות של ליאור (שקף 46)',
+    'תרגול 3/6: גילי ואבא — מי קרא יותר? (שקף 47)',
+    'תרגול 4/6 א: אחוז המסכים הפגומים (שקף 48)',
+    'תרגול 4/6 ב: הטענה של המנהלת (שקף 49)',
+    'יופי של עבודה — 2 תרגילים קשים יותר (שקף 50)',
+    'תרגול 5/6 א: אופיר ותמר — אותו דירוג? (שקף 51)',
+    'תרגול 5/6 ב: מי עלה לגמר? (שקף 52)',
+    'תרגול 6/6 א: השלמת אחוזי ההצלחה (שקף 53)',
+    'תרגול 6/6 ב: דירוג השחקנים (שקף 54)',
+    'זמן ל-2 שאלות מתקדמות (שקף 56)',
+    'מתקדם 1/2: הבסיס להשוואה (שקף 57)',
+    'מתקדם 2/2: תעודת ההוקרה (שקף 58)',
+    'גאיה א: השלמת טבלת המבצעים (שקף 59)',
+    'גאיה ב: הטענה של המוכרת (שקף 60)',
+    'סיפור: בקבוק המים (שקף 61)',
+    'סיפור: מה רוב האנשים ענו (שקף 62)',
+    'סיפור: המחשב הנייד (שקף 63)',
+    'סיפור: מה רוב האנשים ענו (שקף 64)',
+    'סיפור: מה קורה כאן?! (שקף 65)',
+    'סיפור: 60% מול 0.1% (שקף 66)',
+    'סיפור: כהנמן וטברסקי (שקף 67)',
+    'סיפור: איך משווקים מנצלים זאת (שקף 68)',
+    'סיום התרגול — לקראת שאלת השיא (שקף 70)',
+    'שיא: מצעד השוקו (שקף 71)',
+    'שיא א: האם איריס צדקה? (שקף 72)',
+    'שיא: ריכוז השוקולד (שקף 73)',
+    'שיא ב: לאיזה שבט טעם חזק יותר? (שקף 74)',
+    'שיא: רימון ניצח (שקף 75)',
+    'שיא ג: כמה כוסות שוקולד? (שקף 76)',
+    'משימת שיא 2 — פתיחה (שקף 78)',
+    'שיא 2: ההופעות בשכונות (שקף 79)',
+    'שיא 2 א: האם ג\'ניה צודקת? (שקף 80)',
+    'שיא 2: ההופעות התקיימו (שקף 81)',
+    'שיא 2 ב: באיזו שכונה יותר מקום? (שקף 82)',
+    'שיא 2 ג: כמה דונם פארק? (שקף 83)',
+  ];
+  function addOption(value, text) {
+    const opt = document.createElement('option');
+    opt.value = String(value);
+    opt.textContent = text;
+    select.appendChild(opt);
+  }
+  let namedScreens = 0;
+  /* forEach yields (value, index) — addOption takes (value, text), so the
+     arguments have to be placed explicitly or every option gets a Hebrew
+     string as its value and the bar reads "S NaN". */
+  SCREEN_NAMES.forEach((name, i) => {
+    addOption(i, i + ' — ' + name);
+    namedScreens = i + 1;
+  });
+  /* Self-healing: a screen added to the unit but not named above still has to be
+     reachable, so the list is topped up from the unit's own TOTAL_SCREENS when
+     DEV_READY lands. Name it above to give it a label. */
+  /* the screen names already carry their deck slide — reuse it rather than
+     keeping a second map in sync */
+  function slideOf(n) {
+    const name = SCREEN_NAMES[n] || '';
+    const m = name.match(/שקפים?\s*([\d]+)(?:-(\d+))?/) || name.match(/שקף\s*(\d+)/);
+    return m ? Number(m[1]) : null;
+  }
+
+
+  /* what the pptx says the companion should be doing on this screen's slide —
+     the character lines of its "הנחיות הפקה", so a row can be judged against
+     what the script actually asked for */
+  function charNote(screen) {
+    const slide = slideOf(screen);
+    const notes = (typeof SLIDE_NOTES !== 'undefined' && slide) ? SLIDE_NOTES[slide] : null;
+    if (!notes || !notes.length) return '';
+    const about = notes.filter(l => /דמות|מונסטר/.test(l));
+    return (about.length ? about : []).join(' ');
+  }
+
+  /* manual marks — the asset scan sees what the BUILD asks for; these are for
+     what the DECK asks for and the build is missing. Kept per unit. */
+  const MARK_KEY = 'dev-marks-' + UNIT_ID;
+  function readMarks() {
+    try { return JSON.parse(localStorage.getItem(MARK_KEY) || '{}'); } catch (e) { return {}; }
+  }
+  function writeMarks(m) {
+    try { localStorage.setItem(MARK_KEY, JSON.stringify(m)); } catch (e) {}
+  }
+  function toggleMark(kind) {
+    const m = readMarks();
+    const k = String(cur);
+    m[k] = m[k] || {};
+    m[k][kind] = !m[k][kind];
+    if (!m[k].img && !m[k].vid) delete m[k];
+    writeMarks(m);
+    renderMarks();
+  }
+  function renderMarks() {
+    const m = readMarks()[String(cur)] || {};
+    document.getElementById('mark-img').classList.toggle('on', !!m.img);
+    document.getElementById('mark-vid').classList.toggle('on', !!m.vid);
+  }
+
+  function syncOptions() {
+    for (let i = namedScreens; i < total; i++) { addOption(i, i + ' — (ללא שם)'); namedScreens = i + 1; }
+    /* a component only owns part of the unit's screens */
+    [...select.options].forEach(o => { const n = parseInt(o.value, 10);
+      if (n < PART_START || n > PART_END) o.remove(); });
+  }
+
+  window.addEventListener('message', e => {
+    if (e.data?.type === 'DEV_READY') {
+      total = e.data.total;
+      syncOptions();
+      updateLabel();
+    }
+    if (e.data?.type === 'DEV_ASSETS') renderAssets(e.data);
+    if (e.data?.type === 'DEV_SCREEN') {
+      cur = e.data.screen;
+      input.value = cur;
+      if ([...select.options].some(o => o.value === String(cur))) select.value = String(cur);
+      updateLabel();
+    }
+  });
+
+  /* QA: ask the unit which companion images/clips are missing or standing in */
+  function scanAssets() {
+    const panel = document.getElementById('assets-panel');
+    document.getElementById('assets-sub').textContent = 'סורק…';
+    document.getElementById('assets-body').innerHTML = '';
+    panel.classList.remove('hidden');
+    frame.contentWindow.postMessage({ type: 'DEV_SCAN_ASSETS' }, '*');
+  }
+
+  function renderAssets(data) {
+    const rows = (data.rows || []).slice();
+    const marks = readMarks();
+    Object.keys(marks).forEach(k => {
+      const screen = Number(k);
+      const slide = slideOf(screen);
+      if (marks[k].img) rows.push({ screen, kind: 'תמונה', who: '—', name: 'סימון ידני',
+        state: 'manual', note: 'סומן ידנית: בתסריט (שקף ' + slide + ') יש תמונת דמות שחסרה בבנייה' });
+      if (marks[k].vid) rows.push({ screen, kind: 'וידאו', who: '—', name: 'סימון ידני',
+        state: 'manual', note: 'סומן ידנית: בתסריט (שקף ' + slide + ') יש קליפ דמות שחסר בבנייה' });
+    });
+    rows.sort((a, b) => a.screen - b.screen);
+    const miss = rows.filter(r => r.state === 'missing').length;
+    const man  = rows.filter(r => r.state === 'manual').length;
+    document.getElementById('assets-sub').textContent =
+      `נבדקו ${data.checked} הופעות של הדמות בבנייה, לשתי הדמויות · ${miss} חסרים · ` +
+      `${rows.length - miss - man} מציין מקום · ${man} סימון ידני. ` +
+      `הסריקה רואה רק את מה שהבנייה מבקשת — שקף שיש בו דמות בתסריט ובבנייה אין ` +
+      `מסמנים ידנית בכפתורי 🖼/🎬.`;
+    const body = document.getElementById('assets-body');
+    if (!rows.length) {
+      body.innerHTML = '<p class="ok">✓ כל תמונות הדמות והקליפים שהבנייה מבקשת קיימים — אין מציין מקום ואין סימון ידני.</p>';
+      return;
+    }
+    body.innerHTML =
+      '<table><thead><tr><th>מצב</th><th>מסך</th><th>סוג</th><th>דמות</th><th>שם</th><th>הערה</th>' +
+      '<th>מה אמורה להיות הדמות (מהתסריט)</th></tr></thead><tbody>' +
+      rows.map(r => `<tr class="${r.state}">` +
+        `<td>${r.state === 'missing' ? 'חסר' : r.state === 'manual' ? 'סימון ידני' : 'מציין מקום'}</td>` +
+        `<td class="go" onclick="send(${r.screen}); document.getElementById('assets-panel').classList.add('hidden');">S ${r.screen}</td>` +
+        `<td>${r.kind}</td><td>${r.who}</td><td>${r.name}</td><td>${r.note}</td>` +
+        `<td class="script">${charNote(r.screen) || '<span class="none">— אין הנחיה לדמות בשקף</span>'}</td></tr>`).join('') +
+      '</tbody></table>';
+  }
+
+  function send(v) {
+    /* "10.3" = screen 10, reveal step 3 */
+    const n = parseInt(v, 10);
+    frame.contentWindow.postMessage({ type: 'DEV_GOTO', screen: n }, '*');
+    cur = n;
+    input.value = n;
+    select.value = String(v);
+    updateLabel();
+  }
+
+  function nav(delta) {
+    const next = Math.max(PART_START, Math.min(PART_END, cur + delta));
+    send(next);
+  }
+
+  function jumpTo() {
+    const n = parseInt(input.value, 10);
+    if (!isNaN(n) && n >= PART_START && n <= PART_END) send(n);
+  }
+
+  function updateLabel() {
+    label.textContent = 'S ' + cur + ' / ' + PART_END;
+    renderStatus();
+    renderMarks();
+  }
+
+  /* ── review status (producer workflow): green = approved, yellow =
+     needs fixing. Persisted per unit in localStorage. ── */
+  /* QA round suffix — bump it to clear every ✓/! mark for a fresh review
+     (round 2 opened 24.08.26; round 1 marks stay in the browser under the
+     old key, unused). */
+  const QA_ROUND = 'qa1';
+  const REVIEW_KEY = 'dev_review_' + UNIT_ID + '_' + QA_ROUND;
+  function loadReview() {
+    try { return JSON.parse(localStorage.getItem(REVIEW_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveReview(r) {
+    try { localStorage.setItem(REVIEW_KEY, JSON.stringify(r)); } catch (e) {}
+  }
+  function setStatus(st) {
+    const r = loadReview();
+    if (st) r[cur] = st; else delete r[cur];
+    saveReview(r);
+    renderStatus();
+  }
+  function renderStatus() {
+    const r = loadReview();
+    const bar = document.getElementById('dev-bar');
+    bar.classList.toggle('st-ok',  r[cur] === 'ok');
+    bar.classList.toggle('st-fix', r[cur] === 'fix');
+    const badge = document.getElementById('st-badge');
+    badge.textContent = r[cur] === 'ok' ? 'מאושר ✓' : r[cur] === 'fix' ? 'לתיקון !' : '—';
+    [...select.options].forEach(o => {
+      const n = Number(o.value);
+      const base = o.dataset.base || o.textContent;
+      o.dataset.base = base;
+      o.textContent = (r[n] === 'ok' ? '✓ ' : r[n] === 'fix' ? '⚠ ' : '') + base;
+    });
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.key === 'ArrowLeft')  nav(+1);
+    if (e.ctrlKey && e.key === 'ArrowRight') nav(-1);
+  });
+  renderStatus();
+</script>
+</body>
+</html>

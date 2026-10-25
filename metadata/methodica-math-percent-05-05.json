@@ -1,0 +1,32 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-05/",
+  "title": "משימת שיא 1 — מצעד השוקו",
+  "learningUnitId": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05/",
+  "componentPurpose": "assessment",
+  "isAssessment": true,
+  "manufacture": "methodica",
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 5,
+  "masteryLevel": "advanced",
+  "order": 5,
+  "depthLevel": "core-curriculum-extended",
+  "cognitiveLevel": "higher-order-thinking",
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 15,
+  "createdAt": "2026-09-02T00:00:00.000Z",
+  "updatedAt": "2026-09-02T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-05/methodica-math-percent-05-05-001/",
+      "title": "משימת שיא — ריכוז השוקולד בשבטים",
+      "informationToBot": "מטרת הפריט: משימת שיא בת שלושה סעיפים — הפרכת טענה, השוואת ריכוזים באחוזים וחישוב כמות לשמירה על ריכוז נתון. מה התלמיד אמור להבין: שריכוז הוא חלק יחסי, ושפרופורציה משמרת אותו בהגדלה. טעויות נפוצות: השוואת כמות השוקולד המוחלטת; היעזרות בגודל הסיר. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "assessment",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    }
+  ]
+}

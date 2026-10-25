@@ -1,0 +1,64 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-02/",
+  "title": "תרגול — 5 שאלות",
+  "learningUnitId": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05/",
+  "componentPurpose": "both",
+  "isAssessment": false,
+  "manufacture": "methodica",
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 3,
+  "masteryLevel": "intermediate",
+  "order": 2,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevel": "process-thinking",
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 10,
+  "createdAt": "2026-09-02T00:00:00.000Z",
+  "updatedAt": "2026-09-02T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-02/methodica-math-percent-05-02-001/",
+      "title": "תרגול — אחוז ההנחה בחנויות",
+      "informationToBot": "מטרת הפריט: חישוב אחוז הנחה מתוך מחיר מקורי. טעויות נפוצות: חישוב האחוז מתוך המחיר לאחר ההנחה. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-02/methodica-math-percent-05-02-002/",
+      "title": "תרגול — כותרת מגזין הספורט",
+      "informationToBot": "מטרת הפריט: זיהוי כותרת מטעה המשווה מספרים מוחלטים. טעויות נפוצות: קבלת הכותרת כנכונה. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-02/methodica-math-percent-05-02-003/",
+      "title": "תרגול — בחירת הגבינה",
+      "informationToBot": "מטרת הפריט: השוואת אחוזי שומן בין מוצרים. טעויות נפוצות: השוואת משקל במקום אחוז. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-02/methodica-math-percent-05-02-004/",
+      "title": "תרגול — איכות משלוחי השולחנות",
+      "informationToBot": "מטרת הפריט: השוואת אחוז פגומים בין שני משלוחים. טעויות נפוצות: השוואת כמות הפגומים בלבד. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-02/methodica-math-percent-05-02-005/",
+      "title": "תרגול — טבלת המועמדים",
+      "informationToBot": "מטרת הפריט: השלמת טבלת אחוזים ובחירת המועמד. מה התלמיד אמור להבין: שהשוואה הוגנת בין קבוצות שונות בגודלן נעשית באחוזים. טעויות נפוצות: בחירה לפי מספר הקולות המוחלט. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    }
+  ]
+}

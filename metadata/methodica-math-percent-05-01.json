@@ -1,0 +1,56 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-01/",
+  "title": "פתיחה + הקנייה + מודרך + חימום",
+  "learningUnitId": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05/",
+  "componentPurpose": "both",
+  "isAssessment": false,
+  "manufacture": "methodica",
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 3,
+  "masteryLevel": "intermediate",
+  "order": 1,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevel": "process-thinking",
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 30,
+  "createdAt": "2026-09-02T00:00:00.000Z",
+  "updatedAt": "2026-09-02T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-01/methodica-math-percent-05-01-001/",
+      "title": "פתיחה והוק — מצעד השירים",
+      "informationToBot": "מטרת הפריט: יצירת עניין וחיבור לאחוזים דרך פלייליסט 'שירי השנה', כולל בחירת דמות מלווה. מה התלמיד אמור להבין: שמספרים מוחלטים לבדם אינם בסיס להשוואה הוגנת. טעויות נפוצות: אין הערכה בפריט זה — פתיח מוטיבציוני. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "motivational",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-01/methodica-math-percent-05-01-002/",
+      "title": "הקנייה — למה משווים באחוזים",
+      "informationToBot": "מטרת הפריט: הקניית האחוז כבסיס להשוואה הוגנת, בשני מסלולים לבחירה (קריאה או סרטון). מה התלמיד אמור להבין: שהאחוז מנרמל כמויות שונות לאותו בסיס של 100. טעויות נפוצות: השוואת מספרים מוחלטים במקום החלק היחסי. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "instruction",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-01/methodica-math-percent-05-01-003/",
+      "title": "תרגול מודרך + משחקון ההשוואות",
+      "informationToBot": "מטרת הפריט: תרגול מודרך שלב-אחר-שלב של חישוב אחוז מתוך שלם, ולאחריו משחקון השוואה. מה התלמיד אמור להבין: את סדר הפעולות — לזהות את השלם, לחשב את החלק, להמיר לאחוז. טעויות נפוצות: בחירת שלם שגוי; היפוך המונה והמכנה. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "instruction",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-01/methodica-math-percent-05-01-004/",
+      "title": "חימום — קליעות לסל",
+      "informationToBot": "מטרת הפריט: שאלת חימום לפני התרגול. מה התלמיד אמור להבין: יישום עצמאי ראשון של אחוז הצלחה. טעויות נפוצות: השוואת מספר הקליעות במקום האחוז. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    }
+  ]
+}

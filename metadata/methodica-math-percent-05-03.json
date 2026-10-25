@@ -1,0 +1,72 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/",
+  "title": "תרגול בסיסי — 6 שאלות",
+  "learningUnitId": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05/",
+  "componentPurpose": "both",
+  "isAssessment": false,
+  "manufacture": "methodica",
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 3,
+  "masteryLevel": "intermediate",
+  "order": 3,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevel": "process-thinking",
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 10,
+  "createdAt": "2026-09-02T00:00:00.000Z",
+  "updatedAt": "2026-09-02T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/methodica-math-percent-05-03-001/",
+      "title": "ליהי — שלושה מבחנים",
+      "informationToBot": "מטרת הפריט: חישוב אחוז הצלחה בכמה מבחנים בעלי מספר שאלות שונה. טעויות נפוצות: השוואת מספר התשובות הנכונות. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/methodica-math-percent-05-03-002/",
+      "title": "אחוז הפגיעות של אסף ושל ליאור",
+      "informationToBot": "מטרת הפריט: חישוב אחוז פגיעה והשוואה בין שני שחקנים. טעויות נפוצות: השוואת מספר הפגיעות. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/methodica-math-percent-05-03-003/",
+      "title": "גילי ואבא — מי קרא יותר",
+      "informationToBot": "מטרת הפריט: השוואת חלק יחסי מתוך ספרים באורך שונה. טעויות נפוצות: השוואת מספר העמודים. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/methodica-math-percent-05-03-004/",
+      "title": "המסכים הפגומים והטענה של המנהלת",
+      "informationToBot": "מטרת הפריט: זיהוי טענה מטעה המבוססת על מספרים מוחלטים. טעויות נפוצות: קבלת הטענה כנכונה. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/methodica-math-percent-05-03-005/",
+      "title": "אופיר ותמר — מי עלה לגמר",
+      "informationToBot": "מטרת הפריט: השוואת דירוגים באחוזים. טעויות נפוצות: השוואת הניקוד הגולמי. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-03/methodica-math-percent-05-03-006/",
+      "title": "השלמת אחוזי ההצלחה ודירוג השחקנים",
+      "informationToBot": "מטרת הפריט: השלמת טבלה ודירוג לפי אחוז. טעויות נפוצות: דירוג לפי מספר ההצלחות. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    }
+  ]
+}

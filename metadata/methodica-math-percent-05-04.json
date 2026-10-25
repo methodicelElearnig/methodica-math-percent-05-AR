@@ -1,0 +1,48 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-04/",
+  "title": "תרגול מתקדם + מודעות לאחוזים",
+  "learningUnitId": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05/",
+  "componentPurpose": "both",
+  "isAssessment": false,
+  "manufacture": "methodica",
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 4,
+  "masteryLevel": "advanced",
+  "order": 4,
+  "depthLevel": "core-curriculum-extended",
+  "cognitiveLevel": "higher-order-thinking",
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 25,
+  "createdAt": "2026-09-02T00:00:00.000Z",
+  "updatedAt": "2026-09-02T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-04/methodica-math-percent-05-04-001/",
+      "title": "מתקדם — הבסיס להשוואה ותעודת ההוקרה",
+      "informationToBot": "מטרת הפריט: בחירת הבסיס הנכון להשוואה במצבים מורכבים. טעויות נפוצות: בחירת שלם שגוי. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-04/methodica-math-percent-05-04-002/",
+      "title": "גאיה — טבלת המבצעים והטענה של המוכרת",
+      "informationToBot": "מטרת הפריט: חישוב סכום ואחוז הנחה, והפרכת הטענה שאחוזי הנחה מתחברים. מה התלמיד אמור להבין: שאחוזים מבסיסים שונים אינם ניתנים לחיבור. טעויות נפוצות: חיבור אחוזי ההנחה. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-04/methodica-math-percent-05-04-003/",
+      "title": "למה המוח שלנו חושב באחוזים",
+      "informationToBot": "מטרת הפריט: מודעות להטיה הקוגניטיבית (כהנמן וטברסקי) דרך בקבוק המים מול המחשב. מה התלמיד אמור להבין: שאותו חיסכון מוחלט נתפס אחרת לפי האחוז. טעויות נפוצות: אין הערכה בפריט זה — פריט מודעות. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "motivational",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    }
+  ]
+}

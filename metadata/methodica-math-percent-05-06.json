@@ -1,0 +1,32 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-06/",
+  "title": "משימת שיא 2 — ההופעות בשכונות",
+  "learningUnitId": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05/",
+  "componentPurpose": "assessment",
+  "isAssessment": true,
+  "manufacture": "methodica",
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 5,
+  "masteryLevel": "advanced",
+  "order": 6,
+  "depthLevel": "core-curriculum-extended",
+  "cognitiveLevel": "higher-order-thinking",
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 15,
+  "createdAt": "2026-09-02T00:00:00.000Z",
+  "updatedAt": "2026-09-02T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/percent/05/methodica-math-percent-05-06/methodica-math-percent-05-06-001/",
+      "title": "משימת שיא — שטחי הפארק בשכונות",
+      "informationToBot": "מטרת הפריט: משימת שיא חלופית בת שלושה סעיפים — הבחנה בין השוואת שטח מוחלט לבין אחוז השטח, וחישוב שטח לשמירה על אחוז נתון. מה התלמיד אמור להבין: שהשאלה קובעת איזו השוואה הוגנת — מוחלטת או יחסית. טעויות נפוצות: הסקה מגודל השכונה בלבד. [טיוטה — לאישור מפתחת הלמידה]",
+      "contentType": "assessment",
+      "mediaFormat": "interactive-content",
+      "questions": []
+    }
+  ]
+}
